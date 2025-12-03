@@ -86,7 +86,14 @@ WHERE email IS NULL OR  email =''
 
 
 --  ==== ex16 : ==== --
-SELECT * from patients WHERE email IS null OR email = ''
+SELECT 
+    a.appointment_id,
+    CONCAT(p.first_name, ' ', p.last_name) AS patient_name,
+    CONCAT(d.first_name, ' ', d.last_name) AS doctor_name,
+    a.appointment_date
+FROM appointments AS a
+JOIN patients AS p ON a.patient_id = p.patient_id
+JOIN doctors  AS d ON a.doctor_id = d.doctor_id;
 
 
 -- ==== ex17 : ==== --
