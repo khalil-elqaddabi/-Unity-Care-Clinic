@@ -104,17 +104,15 @@ WHERE departmemt_name = 'Cardiology';
 SELECT gender, COUNT(*) AS patient_count
 FROM patients
 GROUP BY gender
-HAVING COUNT(*) >= 2;
-
-
-
--- ==== ex19 : ==== --
-SELECT gender, COUNT(*) AS patient_count
-FROM patients
-GROUP BY gender
-HAVING COUNT(*) >= 2;
+HAVING patient_count >= 2;
 
 
 
 -- ==== ex20 : ==== --
+CREATE VIEW mocr0 AS 
+SELECT * 
+FROM admissions 
+WHERE discharge_date is null;
+
+
 
