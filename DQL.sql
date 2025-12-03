@@ -24,7 +24,10 @@ SELECT * FROM patients WHERE date_of_birth > '2000-01-01'
 
 
 -- === ex7 : ==== --
-SELECT * FROM departments WHERE departmemt_name = 'Cardiology' or departmemt_name = 'Neurology'
+SELECT *
+FROM departments 
+WHERE departmemt_name = 'Cardiology' 
+OR departmemt_name = 'Neurology'
 
 
 
@@ -83,3 +86,35 @@ WHERE email IS NULL OR  email =''
 
 
 --  ==== ex16 : ==== --
+SELECT * from patients WHERE email IS null OR email = ''
+
+
+-- ==== ex17 : ==== --
+DELETE FROM appointments WHERE appointment_date<'2024-01-01' 
+
+
+-- ==== ex18 : ==== --
+UPDATE departments 
+SET departmemt_name = 'Cancer Treatment' 
+WHERE departmemt_name = 'Cardiology';
+
+
+
+-- ==== ex19 : ====--
+SELECT gender, COUNT(*) AS patient_count
+FROM patients
+GROUP BY gender
+HAVING COUNT(*) >= 2;
+
+
+
+-- ==== ex19 : ==== --
+SELECT gender, COUNT(*) AS patient_count
+FROM patients
+GROUP BY gender
+HAVING COUNT(*) >= 2;
+
+
+
+-- ==== ex20 : ==== --
+
